@@ -1,20 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { useFonts } from "expo-font";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import Paciente from "./src/screens/Paciente";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default function App(props) {
+
+  const Stack = createStackNavigator();
+
+  const [ fonteCarregada ] = useFonts({
+    'Roboto': require('./assets/fonts/Roboto-Regular.ttf'),
+  })
+
+  if (!fonteCarregada) {
+    return null;
+  }
+
+  return <NavigationContainer>
+    <Stack.Navigator initialRouteName="Home" screenOptions={{HeaderShown: false}}>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Paciente" component={Paciente} />
+    </Stack.Navigator>
+  </NavigationContainer>
+
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
