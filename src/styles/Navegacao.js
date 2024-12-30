@@ -25,7 +25,7 @@ export default StyleSheet.create({
     navegacaoBaseTexto: {
         color: "#6ebbdc",
         fontFamily: "Roboto",
-        textAlign
+        textAlign: "center"
     }
 
 });

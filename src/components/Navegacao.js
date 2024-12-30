@@ -11,13 +11,13 @@ export default function Navegacao(props) {
         <View style={estilo.navegacaoBase}>
             <Pressable 
             style={estilo.navegacaoBotao}
-            onPress={() => props.navigation.navigate("Home")}>
-                <Text style={estilo.navegacaoBaseTexto}>Home</Text>
+            onPress={() => props.navigation.navigate("Clinica")}>
+                <Text style={estilo.navegacaoBaseTexto}>Clinica</Text>
             </Pressable>
             <Pressable
             style={estilo.navegacaoBotao}
             onPress={() => props.navigation.navigate("Paciente")}>
-                <Text style={estilo.navegacaoBaseTexto}>Home</Text>
+                <Text style={estilo.navegacaoBaseTexto}>Paciente</Text>
             </Pressable>
         </View>
     </View>

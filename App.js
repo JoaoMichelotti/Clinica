@@ -3,13 +3,14 @@ import { useFonts } from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Paciente from "./src/screens/Paciente";
+import Clinica from "./src/screens/Clinica";
 
-export default function App(props) {
+export default function App() {
 
   const Stack = createStackNavigator();
 
   const [ fonteCarregada ] = useFonts({
-    'Roboto': require('./assets/fonts/Roboto-Regular.ttf'),
+    'Roboto': require('./assets/Roboto-Regular.ttf'),
   })
 
   if (!fonteCarregada) {
@@ -17,8 +18,8 @@ export default function App(props) {
   }
 
   return <NavigationContainer>
-    <Stack.Navigator initialRouteName="Home" screenOptions={{HeaderShown: false}}>
-      <Stack.Screen name="Home" component={Home} />
+    <Stack.Navigator initialRouteName="Clinica" screenOptions={{HeaderShown: false}}>
+      <Stack.Screen name="Clinica" component={Clinica} />
       <Stack.Screen name="Paciente" component={Paciente} />
     </Stack.Navigator>
   </NavigationContainer>

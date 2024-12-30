@@ -28,7 +28,7 @@ export default function Paciente(props){
     return <Tela>
     <StatusBar barStyle={"dark-content"} backgroundColor={"#fff"}/>
 
-    <Navegacao navigation={navigation}/>
+    <Navegacao navigation={props.navigation}/>
 
     <Janela>
         <Text style={{fontSize: 20,
